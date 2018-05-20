@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="news">
     <el-table
       v-loading="loading"
       :data="tableData"
@@ -26,13 +26,13 @@ export default {
     return {
       tableData: [{
         date: '05-17',
-        address: '新华社：中国快递企业“科技范”越来越足'
+        address: '新华社：中国快递企业“科技范”越来越足丨锐评'
       }, {
         date: '05-11',
-        address: '重磅！末端网点备案、诚信体系建设怎么'
+        address: '重磅！末端网点备案、诚信体系建设怎么干？国'
       }, {
         date: '05-09',
-        address: '国家邮政局审议通过《快递暂行条例》三'
+        address: '国家邮政局审议通过《快递暂行条例》三项配套'
       }],
       loading: true
     }
@@ -54,9 +54,13 @@ export default {
 </script>
 
 <style scoped>
-.icon{
+.news {
+  position: relative;
+  top: 3rem;
+}
+.icon {
   position: absolute;
-  top: 21.1rem;
-  left: 19rem;
+  top: 1rem;
+  left: 22rem;
 }
 </style>

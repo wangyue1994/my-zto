@@ -15,6 +15,7 @@
         v-model="inputValue"
         :fetch-suggestions="querySearch"
         placeholder="请输入12位中通运单号"
+        maxlength=12
         @select="handleSelect">
         <i
           class="el-icon-search el-input__icon"
@@ -23,7 +24,6 @@
         </i>
         <template slot-scope="{ item }">
           <div class="name">{{ item.value }}</div>
-          <span class="addr">{{ item.address }}</span>
         </template>
       </el-autocomplete>
     </div>
@@ -39,17 +39,28 @@
       <div class="use_menu">快件管理、详情订阅、积分奖励…尽在中通会员</div>
     </div>
     <news-loading></news-loading>
-    <footer>footer</footer>
+    <foot-menu></foot-menu>
+    <div class="media">
+      <div class="mediaitem"><i class="el-icon-phone"></i>客服热线 95311</div>
+      <div class="mediaitem"><i class="el-icon-download"></i>下载中通APP</div>
+    </div>
+    <footer class="footer">
+      <img src="../assets/logo.png" alt="footerlogo" class="footerlogo">
+      <p>中通快递 © 版权所有 沪ICP备13044869号</p>
+    </footer>
   </div>
 </template>
 
 <script>
 import ClickItem from './ClickItem.vue'
 import NewsLoading from './NewsLoading.vue'
+import FootMenu from './FootMenu.vue'
+
 export default {
   components: {
     ClickItem,
-    NewsLoading
+    NewsLoading,
+    FootMenu
   },
   data () {
     return {
@@ -74,9 +85,9 @@ export default {
     },
     loadAll () {
       return [
-        { value: '三全鲜食（北新泾店）', address: '长宁区新渔路144号' },
-        { value: 'Hot honey 首尔炸鸡（仙霞路）', address: '上海市长宁区淞虹路661号' },
-        { value: '新旺角茶餐厅', address: '上海市普陀区真北路988号创邑金沙谷6号楼113' }
+        { value: '111111111111' },
+        { value: '222222222222' },
+        { value: '333333333333' }
       ]
     },
     handleSelect () {
@@ -88,7 +99,7 @@ export default {
       } else if (this.inputValue.length !== 12) {
         this.$message.error('请输入12位正确格式运单号！')
       } else {
-        console.log(this.inputValue)
+        this.$router.push({name: 'Waybill', params: { billId: this.inputValue }})
       }
     }
   },
@@ -149,5 +160,35 @@ header {
 .use {
   position: relative;
   top: 3rem;
+}
+.use_box {
+  margin-left: 1rem;
+}
+.use_menu {
+  text-indent: 2rem;
+}
+.media {
+  background: #6086e7;
+  position: relative;
+  top: 5rem;
+  height: 2rem;
+  line-height: 2rem;
+  text-align: center;
+}
+.mediaitem {
+  display: inline-block;
+  width: 48%;
+  color: #fff;
+}
+.footer {
+  position: relative;
+  top: 6rem;
+  text-align: center;
+}
+.footerlogo {
+  width: 6rem;
+}
+.footer>p {
+  color: #d5d5d5;
 }
 </style>

@@ -1,6 +1,5 @@
 <template>
-  <div class="login">  
-  <head-menu></head-menu>
+  <div class="login">
     <el-tabs v-model="activeName" @tab-click="handleClick">
        <el-tab-pane label="手机登录" name="first">
          <el-input
@@ -48,14 +47,10 @@
 </template>
 
 <script>
-import HeadMenu from '../HeadMenu'
 export default {
-    components: {
-      HeadMenu
-    },
     data() {
       return {
-        activeName: 'second',
+        activeName: 'first',
         input1: '',
         input2: '',
         input3: '',
@@ -79,7 +74,7 @@ export default {
             type: 'warning'
           })
       	} else {
-            this.$router.push('/')
+			this.$router.push('/')
       	}
       }
     }
