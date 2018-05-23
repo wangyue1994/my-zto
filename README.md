@@ -1,7 +1,7 @@
 # my-zto
 
 > A Vue.js project
-
+一个 用vue.js写的仿站，还是不够好，加油，相信自己见证努力。
 ## Build Setup
 
 ``` bash
