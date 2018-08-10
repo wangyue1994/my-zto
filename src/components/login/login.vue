@@ -1,18 +1,19 @@
 <template>
-  <div class="login">  
+  <div>
   <head-menu></head-menu>
+  <div class="login">
     <el-tabs v-model="activeName" @tab-click="handleClick">
        <el-tab-pane label="手机登录" name="first">
-         <el-input
-           prefix-icon="el-icon-mobile-phone"
+     <el-input
+       prefix-icon="el-icon-mobile-phone"
 		   placeholder="请输入手机号"
 		   maxlength="11"
 		   v-model="input1"
 		   clearable>
 		 </el-input>
 		 <el-input
-           prefix-icon="el-icon-edit"
-           suffix-icon="el-icon-message"
+       prefix-icon="el-icon-edit"
+       suffix-icon="el-icon-message"
 		   placeholder="请输入手机验证码"
 		   maxlength="6"
 		   v-model="input2"
@@ -44,6 +45,7 @@
   	  <span><router-link to="/">还不是中通会员？点此快速注册</router-link></span>
   	  <p>成为中通会员随时随地掌握最新的物流动态，享受签到送积分、礼品兑换等诸多会员权益</p>
   	</div>
+    </div>
   </div>
 </template>
 
