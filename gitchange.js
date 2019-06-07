@@ -2,7 +2,7 @@ var fs = require('fs');
 var exec = require('child_process').exec;
 
 var now = new Date().setDate(7);
-var old = new Date().setDate(2);
+var old = new Date('2018').setDate(2);
 
 function gitchange() {
     if (now > old) {
